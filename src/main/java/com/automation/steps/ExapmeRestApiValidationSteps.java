@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import com.automation.utils.Utility;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import io.restassured.RestAssured;
@@ -13,6 +14,7 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
+import java.util.Map;
 import java.util.Properties;
 
 public class ExapmeRestApiValidationSteps {
@@ -42,9 +44,10 @@ public class ExapmeRestApiValidationSteps {
 		
 	}
 	
-	@And("user validate for employee id \"([^\"]*)\" name is \"([^\"]*)\"$")
-	public void validateEmployeeDetail(String id,String expectedName)
+	@And("validate details for employee id \"([^\"]*)\"$")
+	public void validateEmployeeDetail(String id,Map<String,String> empData)
 	{
+		
 		RestAssured.baseURI=baseUri;
 		
 		Response response=given().header("Content-Type","application/json")
@@ -55,8 +58,16 @@ public class ExapmeRestApiValidationSteps {
 		JsonPath path=new JsonPath(response.asString());
 		String actualName = path.getString("data.employee_name");
 
+		for(Map.Entry<String, String> entry:empData.entrySet())
+		{
+			String pathinResponse="data."+entry.getKey();
+			actualName = path.getString(pathinResponse);
+			Assert.assertEquals(entry.getValue(),actualName);
+			
+		}
+		
 		// Assert that correct status code is returned.
-		Assert.assertEquals(expectedName,actualName);
+		
 		
 	}
 	
@@ -72,8 +83,11 @@ public class ExapmeRestApiValidationSteps {
 		System.out.println(response.asString());
 		JsonPath path=new JsonPath(response.asString());
 		String actualMessage = path.getString("message");
+		
+		String actualStatus = path.getString("status");
 
-		// Assert that correct status code is returned.
+		// Assert that correct status code and message is returned.
+		Assert.assertEquals("success",actualStatus );
 		Assert.assertEquals(expectedMessage,actualMessage );
 		
 	}

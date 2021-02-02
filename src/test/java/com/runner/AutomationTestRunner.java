@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions( plugin = {"pretty","html:target/html/automation","json:target/cucumber.json"},
                 features = {"."},
                 glue={"com.automation.steps"},
-//                tags={"@login,@validateApi"}
+//                tags={"@uiScenario"}
                 tags={"@apiScenario,@uiScenario"}
         )
 public class AutomationTestRunner {

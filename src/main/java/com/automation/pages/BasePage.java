@@ -12,27 +12,33 @@ public class BasePage {
 
 	// Declare the WebDriver
 	public static WebDriver driver;
+	static Properties prop = Utility.loadProperties();
 
 	public static WebDriver getInstance() {
 		if (driver == null) {
+			String browser = prop.getProperty("browser");
+			if ("chrome".equalsIgnoreCase(browser)) {
 
-			String filePath = System.getProperty("user.dir");
-			System.out.println(filePath);
+				String filePath = System.getProperty("user.dir");
+				System.out.println(filePath);
 //        System.setProperty("webdriver.chrome.driver", filePath + "/src/test/resources/chromedriver");
 
-			System.setProperty("webdriver.chrome.driver", "/Users/softwares/chromedriver");
-			driver = new ChromeDriver();
-			
+				System.setProperty("webdriver.chrome.driver", "/Users/softwares/chromedriver");
+				driver = new ChromeDriver();
+			} else {
+				// other browsers can be added here
+			}
+
 		}
 		return driver;
 	}
-	
-	public static void navigateHomePage()
-	{
-		Properties prop=Utility.loadProperties();
-		String Uri=prop.getProperty("uiuri");
+
+	public static void navigateHomePage() {
+
+		String Uri = prop.getProperty("uiuri");
 		driver.get(Uri);
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Long.parseUnsignedLong(prop.getProperty("implicitwait")), TimeUnit.SECONDS);
 	}
 
 }
