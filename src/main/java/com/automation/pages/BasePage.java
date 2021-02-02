@@ -20,10 +20,9 @@ public class BasePage {
 			if ("chrome".equalsIgnoreCase(browser)) {
 
 				String filePath = System.getProperty("user.dir");
-				System.out.println(filePath);
-//        System.setProperty("webdriver.chrome.driver", filePath + "/src/test/resources/chromedriver");
 
-				System.setProperty("webdriver.chrome.driver", "/Users/softwares/chromedriver");
+				System.setProperty("webdriver.chrome.driver", filePath + "/chromedriver");
+
 				driver = new ChromeDriver();
 			} else {
 				// other browsers can be added here
@@ -38,7 +37,8 @@ public class BasePage {
 		String Uri = prop.getProperty("uiuri");
 		driver.get(Uri);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Long.parseUnsignedLong(prop.getProperty("implicitwait")), TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Long.parseUnsignedLong(prop.getProperty("implicitwait")),
+				TimeUnit.SECONDS);
 	}
 
 }

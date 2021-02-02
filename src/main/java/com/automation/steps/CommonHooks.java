@@ -3,6 +3,7 @@ package com.automation.steps;
 import org.openqa.selenium.WebDriver;
 
 import com.automation.pages.BasePage;
+import com.automation.utils.Utility;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -23,6 +24,11 @@ public class CommonHooks {
 	{
 		//we can write any information to cucumber report using this. or can capture screen shots and embed on failure
 		scenario.write("Scenario Status :: " +scenario.getStatus());
+		try {
+			scenario.embed(Utility.takeSnapShot(driver), "image/png");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		driver.close();
 //		driver.quit();
 	}
