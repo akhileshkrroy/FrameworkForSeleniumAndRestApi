@@ -1,1 +1,7 @@
-ToolsQA/App.class
+com/automation/steps/PriceValidationSteps.class
+com/automation/pages/HomePage.class
+com/automation/steps/CommonHooks.class
+com/automation/pages/CartPage.class
+com/automation/pages/BasePage.class
+com/automation/pages/CheckoutPage.class
+com/automation/steps/ExapmeRestApiValidationSteps.class

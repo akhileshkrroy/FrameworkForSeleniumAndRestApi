@@ -1,0 +1,195 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 366955006,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "set base uri of api",
+            "match": {
+              "location": "ExapmeRestApiValidationSteps.setBaseUri()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "Status Validation for get",
+        "description": "",
+        "id": "validate-create-and-delete-api;status-validation-for-get",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3450592174,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user validate \"Get\" for \"success\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Get",
+                  "offset": 15
+                },
+                {
+                  "val": "success",
+                  "offset": 25
+                }
+              ],
+              "location": "ExapmeRestApiValidationSteps.validateGetAndDelete(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 7,
+            "name": "@validateApi"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 36441,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "set base uri of api",
+            "match": {
+              "location": "ExapmeRestApiValidationSteps.setBaseUri()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "line": 12,
+        "name": "validate details of an employee",
+        "description": "",
+        "id": "validate-create-and-delete-api;validate-details-of-an-employee",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 729306813,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "user validate for employee id \"1\" name is \"Tiger Nixon\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 31
+                },
+                {
+                  "val": "Tiger Nixon",
+                  "offset": 43
+                }
+              ],
+              "location": "ExapmeRestApiValidationSteps.validateEmployeeDetail(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 11,
+            "name": "@validateApi"
+          }
+        ]
+      },
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 43639,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "set base uri of api",
+            "match": {
+              "location": "ExapmeRestApiValidationSteps.setBaseUri()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "line": 16,
+        "name": "validate delete of an employee",
+        "description": "",
+        "id": "validate-create-and-delete-api;validate-delete-of-an-employee",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 668459713,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "user validate deleted message is \"Successfully! Record has been deleted\" for employee id \"2\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Successfully! Record has been deleted",
+                  "offset": 34
+                },
+                {
+                  "val": "2",
+                  "offset": 90
+                }
+              ],
+              "location": "ExapmeRestApiValidationSteps.validateDeleteMessage(String,String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 15,
+            "name": "@validateApi"
+          }
+        ]
+      }
+    ],
+    "name": "validate create and delete api",
+    "description": "",
+    "id": "validate-create-and-delete-api",
+    "keyword": "Feature",
+    "uri": "src/main/features/RestExampleValidationApi.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@api"
+      }
+    ]
+  }
+]
