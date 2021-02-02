@@ -1,180 +1,100 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/features/RestExampleValidationApi.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/features/ProductPriceValidationUi.feature");
 formatter.feature({
   "line": 2,
-  "name": "validate create and delete api",
-  "description": "",
-  "id": "validate-create-and-delete-api",
+  "name": "Product Price Validation",
+  "description": "As a user I want to verify the price of item on different pages",
+  "id": "product-price-validation",
   "keyword": "Feature",
   "tags": [
     {
       "line": 1,
-      "name": "@api"
+      "name": "@web"
     }
   ]
 });
+formatter.before({
+  "duration": 3611710149,
+  "status": "passed"
+});
 formatter.background({
-  "line": 4,
+  "line": 5,
   "name": "",
   "description": "",
   "type": "background",
   "keyword": "Background"
 });
 formatter.step({
-  "line": 5,
-  "name": "set base uri of api",
+  "line": 6,
+  "name": "user navigates to search page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "ExapmeRestApiValidationSteps.setBaseUri()"
+  "location": "PriceValidationSteps.userNavigates()"
 });
 formatter.result({
-  "duration": 366955006,
+  "duration": 3124874986,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 8,
-  "name": "Status Validation for get",
-  "description": "",
-  "id": "validate-create-and-delete-api;status-validation-for-get",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 7,
-      "name": "@validateApi"
-    }
-  ]
-});
-formatter.step({
   "line": 9,
-  "name": "user validate \"Get\" for \"success\"",
-  "keyword": "Then "
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Get",
-      "offset": 15
-    },
-    {
-      "val": "success",
-      "offset": 25
-    }
-  ],
-  "location": "ExapmeRestApiValidationSteps.validateGetAndDelete(String,String)"
-});
-formatter.result({
-  "duration": 3450592174,
-  "status": "passed"
-});
-formatter.background({
-  "line": 4,
-  "name": "",
+  "name": "Validate item price of first element at Add To Cart Page and Checkout Pages remains same",
   "description": "",
-  "type": "background",
-  "keyword": "Background"
+  "id": "product-price-validation;validate-item-price-of-first-element-at-add-to-cart-page-and-checkout-pages-remains-same",
+  "type": "scenario",
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "line": 8,
+      "name": "@uiScenario"
+    }
+  ]
 });
 formatter.step({
-  "line": 5,
-  "name": "set base uri of api",
-  "keyword": "Given "
+  "line": 10,
+  "name": "use searches for \"qa testing for beginners\"",
+  "keyword": "When "
 });
-formatter.match({
-  "location": "ExapmeRestApiValidationSteps.setBaseUri()"
+formatter.step({
+  "line": 11,
+  "name": "verify item price at search and add to cart matches",
+  "keyword": "Then "
 });
-formatter.result({
-  "duration": 36441,
-  "status": "passed"
-});
-formatter.scenario({
+formatter.step({
   "line": 12,
-  "name": "validate details of an employee",
-  "description": "",
-  "id": "validate-create-and-delete-api;validate-details-of-an-employee",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 11,
-      "name": "@validateApi"
-    }
-  ]
-});
-formatter.step({
-  "line": 13,
-  "name": "user validate for employee id \"1\" name is \"Tiger Nixon\"",
-  "keyword": "Then "
+  "name": "verify item price at search and checkout out page matches",
+  "keyword": "And "
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1",
-      "offset": 31
-    },
-    {
-      "val": "Tiger Nixon",
-      "offset": 43
+      "val": "qa testing for beginners",
+      "offset": 18
     }
   ],
-  "location": "ExapmeRestApiValidationSteps.validateEmployeeDetail(String,String)"
+  "location": "PriceValidationSteps.userSearches(String)"
 });
 formatter.result({
-  "duration": 729306813,
+  "duration": 8098552926,
   "status": "passed"
 });
-formatter.background({
-  "line": 4,
-  "name": "",
-  "description": "",
-  "type": "background",
-  "keyword": "Background"
-});
-formatter.step({
-  "line": 5,
-  "name": "set base uri of api",
-  "keyword": "Given "
-});
 formatter.match({
-  "location": "ExapmeRestApiValidationSteps.setBaseUri()"
+  "location": "PriceValidationSteps.verifyItemPriceAtAddToCart()"
 });
 formatter.result({
-  "duration": 43639,
+  "duration": 988967665,
   "status": "passed"
 });
-formatter.scenario({
-  "line": 16,
-  "name": "validate delete of an employee",
-  "description": "",
-  "id": "validate-create-and-delete-api;validate-delete-of-an-employee",
-  "type": "scenario",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "line": 15,
-      "name": "@validateApi"
-    }
-  ]
-});
-formatter.step({
-  "line": 17,
-  "name": "user validate deleted message is \"Successfully! Record has been deleted\" for employee id \"2\"",
-  "keyword": "Then "
-});
 formatter.match({
-  "arguments": [
-    {
-      "val": "Successfully! Record has been deleted",
-      "offset": 34
-    },
-    {
-      "val": "2",
-      "offset": 90
-    }
-  ],
-  "location": "ExapmeRestApiValidationSteps.validateDeleteMessage(String,String)"
+  "location": "PriceValidationSteps.verifyItemPriceAtCheckout()"
 });
 formatter.result({
-  "duration": 668459713,
+  "duration": 2206568,
+  "status": "passed"
+});
+formatter.write("Scenario Status :: passed");
+formatter.embedding("image/png", "embedded0.png");
+formatter.after({
+  "duration": 462615420,
   "status": "passed"
 });
 });
