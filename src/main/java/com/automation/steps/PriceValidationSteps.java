@@ -44,7 +44,6 @@ public class PriceValidationSteps {
 		//Get Price of first item and store in map for future price validation 
 		String price=searchPage.getPrice();
 		Assert.assertNotNull(price);
-		System.out.println(price);
 		map.put("priceAtSearch", Utility.convertDollarToInt(price));
 		map.entrySet().forEach(e->System.out.println(e));
 		
@@ -61,7 +60,6 @@ public class PriceValidationSteps {
 		//Get Price of first item at add to cart page and store in map for future price validation 
 		String price=cartPage.getItemCurrentPrice();
 		Assert.assertNotNull(price);
-		System.out.println(price);
 		map.put("priceatAddToCart", Utility.convertDollarToInt(price));
 		map.entrySet().forEach(e->System.out.println(e));
 		

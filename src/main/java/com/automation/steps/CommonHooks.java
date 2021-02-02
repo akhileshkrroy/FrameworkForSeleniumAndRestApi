@@ -29,8 +29,7 @@ public class CommonHooks {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		driver.close();
-//		driver.quit();
+		driver.quit();
 	}
 
 }
