@@ -18,15 +18,27 @@ public class Utility {
             // load a properties file
             prop.load(input);
 
-            // get the property value and print it out
-//            System.out.println(prop.getProperty("db.url"));
-//            System.out.println(prop.getProperty("db.user"));
-//            System.out.println(prop.getProperty("db.password"));
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
 		return prop;
+	}
+	
+	public static double convertDollarToInt(String strPrice)
+	{
+		String sNumber=strPrice.substring(1);
+		
+		return Double.parseDouble(sNumber);
+		
+	}
+	
+	public static boolean priceMathces(int firstPrice,int secondPrice)
+	{
+		if(firstPrice==secondPrice)
+		return true;
+		else
+		return false;
+		
 	}
 
 }

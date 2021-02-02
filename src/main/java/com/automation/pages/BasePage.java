@@ -32,7 +32,7 @@ public class BasePage {
 		Properties prop=Utility.loadProperties();
 		String Uri=prop.getProperty("uiuri");
 		driver.get(Uri);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 	}
 
 }
