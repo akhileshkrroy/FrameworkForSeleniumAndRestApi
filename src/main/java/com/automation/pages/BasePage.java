@@ -1,9 +1,12 @@
 package com.automation.pages;
 
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.automation.utils.Utility;
 
 public class BasePage {
 
@@ -26,7 +29,9 @@ public class BasePage {
 	
 	public static void navigateHomePage()
 	{
-		driver.get("https://www.amazon.com/");
+		Properties prop=Utility.loadProperties();
+		String Uri=prop.getProperty("uiuri");
+		driver.get(Uri);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 

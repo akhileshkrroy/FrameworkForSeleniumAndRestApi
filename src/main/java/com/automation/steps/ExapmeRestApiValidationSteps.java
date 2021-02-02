@@ -3,6 +3,8 @@ package com.automation.steps;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import com.automation.utils.Utility;
+
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import io.restassured.RestAssured;
@@ -11,12 +13,15 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.*;
 
+import java.util.Properties;
+
 public class ExapmeRestApiValidationSteps {
 	String baseUri=null;
 	@And("set base uri of api$")
 	public void setBaseUri()
 	{
-		baseUri="http://dummy.restapiexample.com";
+		Properties prop=Utility.loadProperties();
+		baseUri=prop.getProperty("apiuri");
 		
 	}
 	

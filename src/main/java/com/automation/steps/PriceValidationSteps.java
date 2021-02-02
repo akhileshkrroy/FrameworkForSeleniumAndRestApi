@@ -20,8 +20,7 @@ public class PriceValidationSteps {
 	@Given("^user navigates to search page$")
 	public void userNavigates()
 	{
-		System.out.println("user Logs in");
-//		driver=BasePage.getInstance();
+		driver=BasePage.getInstance();
 		BasePage.navigateHomePage();
 	}
 
