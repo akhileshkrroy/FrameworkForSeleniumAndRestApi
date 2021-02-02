@@ -19,8 +19,8 @@ public class BasePage {
 			String browser = prop.getProperty("browser");
 			if ("chrome".equalsIgnoreCase(browser)) {
 
+				//i am using mac machine
 				String filePath = System.getProperty("user.dir");
-
 				System.setProperty("webdriver.chrome.driver", filePath + "/chromedriver");
 
 				driver = new ChromeDriver();
