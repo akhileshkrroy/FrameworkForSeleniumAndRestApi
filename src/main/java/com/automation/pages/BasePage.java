@@ -20,8 +20,8 @@ public class BasePage {
 			if ("chrome".equalsIgnoreCase(browser)) {
 
 				//i am using mac machine
-				String filePath = System.getProperty("user.dir");
-				System.setProperty("webdriver.chrome.driver", filePath + "/chromedriver");
+				String driverPath = System.getProperty("user.dir");
+				System.setProperty("webdriver.chrome.driver", driverPath + "/chromedriver");
 
 				driver = new ChromeDriver();
 			} else {

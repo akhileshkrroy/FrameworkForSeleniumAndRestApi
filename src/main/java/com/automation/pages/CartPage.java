@@ -11,10 +11,10 @@ public class CartPage extends BasePage{
 	public WebDriver driver;
 	
 	@FindBy(xpath=".//a[@id='hlb-ptc-btn-native']")
-	WebElement checkoutButton;
+	private WebElement checkoutButton;
 	
 	@FindBy(xpath="(.//span[@class='a-color-price hlb-price a-inline-block a-text-bold'])[1]")
-	WebElement itemPriceAtAddToCartPage;
+	private WebElement itemPriceAtAddToCartPage;
 	
 	public CartPage(WebDriver driver)
 	{

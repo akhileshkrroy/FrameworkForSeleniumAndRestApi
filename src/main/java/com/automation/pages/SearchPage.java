@@ -12,19 +12,19 @@ public class SearchPage extends BasePage{
 	
 	
 	@FindBy(id="twotabsearchtextbox")
-	WebElement searchBox;
+	private WebElement searchBox;
 	
 	@FindBy(id="nav-search-submit-button")
-	WebElement searchButton;
+	private WebElement searchButton;
 	
 	@FindBy(xpath="(.//*[@class='a-section aok-relative s-image-fixed-height'])[1]")
-	WebElement firstSearchedElement;
+	private WebElement firstSearchedElement;
 	
 	@FindBy(xpath=".//span[@id='newBuyBoxPrice']")
-	WebElement pricefirstSearchedElementPrice;
+	private WebElement pricefirstSearchedElementPrice;
 	
 	@FindBy(id="add-to-cart-button")
-	WebElement addToCart;
+	private WebElement addToCart;
 	
 	public SearchPage(WebDriver driver)
 	{

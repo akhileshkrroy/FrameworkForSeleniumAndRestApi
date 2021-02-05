@@ -13,7 +13,7 @@ public WebDriver driver;
 
 	
 	@FindBy(xpath="(.//span[@class='a-color-price hlb-price a-inline-block a-text-bold'])[1]")
-	WebElement itemPriceAtAddToCartPage;
+	private WebElement itemPriceAtAddToCartPage;
 	
 	public CheckoutPage(WebDriver driver)
 	{
